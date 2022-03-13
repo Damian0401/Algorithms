@@ -1,0 +1,5 @@
+# vscode settings file
+.vscode/
+
+# python auto generated files
+__pycache__/

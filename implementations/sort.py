@@ -82,3 +82,27 @@ def comb_sort(arr: list):
             if arr[i] > arr[i + length]:
                 arr[i], arr[i + length] = arr[i + length], arr[i]
         length = int(length / 1.3)
+
+# counting sort
+def counting_sort(arr: list):
+    min_element = min(arr)
+    max_element = max(arr)
+    hist = {}
+    for i in range(min_element, max_element + 1):
+        hist[i] = 0
+    for i in arr:
+        hist[i] += 1
+    sorted_list = []
+    for key, value in hist.items():
+        for i in range(value):
+            sorted_list.append(key)
+    arr.clear()
+    arr.extend(sorted_list)
+
+# radix sort
+def radix_sort(arr: list):
+    print('TODO')
+
+# bucket sort
+def bucket_sort(arr: list):
+    print('TODO')

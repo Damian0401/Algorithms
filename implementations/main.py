@@ -1,13 +1,16 @@
 from collections.abc import Callable
 import random
 import time
+
+from numpy import number
 from sort import (
     bubble_sort, 
     quick_sort, 
     cocktail_sort, 
     insert_sort, 
     selection_sort, 
-    comb_sort
+    comb_sort,
+    counting_sort
 )
 
 # analyze sort function
@@ -49,15 +52,16 @@ def generate_data(start_range: int, end_range: int, amount: int, unique: bool = 
         return random.sample(range(start_range, end_range), amount)
     return [random.randint(start_range, end_range) for i in range(amount)]
 
+# run sort analyze
+def analyze_sorts(sorts: list,start_range: number = 0, end_range: number = 5000, amount: number = 2000, unique: bool = False, display: bool = False):
+    data = generate_data(start_range, end_range, amount, unique)
+    for sort in sorts:
+        analyze_sort(sort, data.copy(), display)
+
 # main function
 def main():
-    data = generate_data(0, 2000, 1000, True)
-    analyze_sort(bubble_sort, data.copy(), False)
-    analyze_sort(cocktail_sort, data.copy(), False)
-    analyze_sort(insert_sort, data.copy(), False)
-    analyze_sort(selection_sort, data.copy(), False)
-    analyze_sort(comb_sort, data.copy(), False)
-    analyze_sort(quick_sort, data.copy(), False)
+    sorts = [bubble_sort, cocktail_sort, insert_sort, selection_sort, comb_sort, quick_sort, counting_sort]
+    analyze_sorts(sorts)
 
 # call main function if necessary
 if(__name__ == '__main__'):
