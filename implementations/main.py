@@ -1,5 +1,4 @@
 from collections.abc import Callable
-from numpy import number
 import random
 import time
 
@@ -55,7 +54,7 @@ def generate_data(start_range: int, end_range: int, amount: int, unique: bool = 
     return [random.randint(start_range, end_range) for i in range(amount)]
 
 # run sort analyze
-def analyze_sorts(sorts: list,start_range: number = 0, end_range: number = 5000, amount: number = 2500, unique: bool = False, display: bool = False):
+def analyze_sorts(sorts: list,start_range: int = 0, end_range: int = 5000, amount: int = 2500, unique: bool = False, display: bool = False):
     data = generate_data(start_range, end_range, amount, unique)
     for sort in sorts:
         analyze_sort(sort, data.copy(), display)

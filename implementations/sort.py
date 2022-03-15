@@ -1,5 +1,3 @@
-from numpy import number
-
 # bubble sort
 def bubble_sort(arr: list):
     length = len(arr) - 1
@@ -87,7 +85,7 @@ def comb_sort(arr: list):
         length = comb_get_length(length)
 
 # part of comb sort
-def comb_get_length(length: number):
+def comb_get_length(length: int):
     new_length = int(length // 1.3)
     if new_length > 1:
         return new_length
@@ -140,7 +138,7 @@ def radix_sort(arr: list):
         exp *= 10
 
 # part of radix sort
-def radix_counting_sort(arr: list, exp: number):
+def radix_counting_sort(arr: list, exp: int):
     length = len(arr)
     sorted_list = [0] * length
     count = [0] * 10
