@@ -155,3 +155,26 @@ def radix_counting_sort(arr: list, exp: int):
         i -= 1
     for i in range(length):
         arr[i] = sorted_list[i]
+
+# heap sort
+def heap_sort(arr: list):
+    size = len(arr)
+    for i in range(size // 2, -1, -1):
+        heapify(arr, size, i)
+    for i in range(size - 1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
+
+# part of heap sort algorithm
+def heapify(arr: list, size: int, index: int):
+    largest = index
+    left = 2 * index + 1
+    right = 2 * index + 2
+    if left < size and arr[largest] < arr[left]:
+        largest = left
+    if right < size and arr[largest] < arr[right]:
+        largest = right
+    if largest is not index:
+        arr[largest], arr[index] = arr[index], arr[largest]
+        heapify(arr, size, largest)
+    

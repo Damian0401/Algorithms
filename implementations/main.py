@@ -11,7 +11,8 @@ from sort import (
     comb_sort,
     counting_sort,
     bucket_sort,
-    radix_sort
+    radix_sort,
+    heap_sort
 )
 
 # analyze sort function
@@ -61,7 +62,7 @@ def analyze_sorts(sorts: list,start_range: int = 0, end_range: int = 5000, amoun
 
 # main function
 def main():
-    sorts = [bubble_sort, cocktail_sort, insert_sort, selection_sort, comb_sort, quick_sort, counting_sort, bucket_sort, radix_sort]
+    sorts = [bubble_sort, cocktail_sort, insert_sort, selection_sort, comb_sort, quick_sort, counting_sort, bucket_sort, radix_sort, heap_sort]
     analyze_sorts(sorts)
 
 # call main function if necessary
